@@ -1,6 +1,6 @@
 package com.orios.petscape.models;
 
-import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -33,7 +33,7 @@ public class Customer {
     private String email;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "customer")
-    private List<Pet> pets;
+    private Set<Pet> pets;
 
     @Column(name="street_address")
     private String address;
@@ -46,6 +46,10 @@ public class Customer {
 
     @Column(name="zip")
     private int zip;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy ="customer")
+    @Column(name="work_order")
+    private Set<WorkOrder> orders;
 
     
 }

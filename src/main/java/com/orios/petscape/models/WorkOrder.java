@@ -1,5 +1,7 @@
 package com.orios.petscape.models;
 
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -17,38 +19,29 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name="pets")
-public class Pet {
+@Table(name="work_orders")
+public class WorkOrder {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="pet_id")
+    @Column(name="work_order_id")
     private Long id;
 
     @ManyToOne
     @JoinColumn(name="customer_id", nullable = false)
     private Customer customer;
 
-    @Column(name="name")
-    private String name;
+    @ManyToOne
+    @JoinColumn(name="employee_id", nullable = false)
+    private Employee cashier;
 
-    @Column(name="sex")
-    private String sex;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "work_order")
+    private Set<WorkItem> workItems;
 
-    @Column(name="fixed")
-    private Boolean isFixed;
+    @Column(name="total")
+    private BigDecimal totalPrice;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
-    private Set<PetBreed> petBreeds;
-
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
-    private Set<PetColor> petColors;
-    
-    @Column(name="age")
-    private int age;
-
-    @Column(name="weight")
-    private int weight;
-
+    @Column(name="transaction_date")
+    private LocalDateTime transactionDate;   
     
 }
