@@ -23,14 +23,18 @@ public class Customer {
     @Column(name="customer_id")
     private Long id;
 
-    @Column(name="first_name")
+    @Column(name="first_name", nullable=false)
+    @NotNull
     private String firstName;
 
-    @Column(name = "last_name")
+    @Column(name = "last_name", nullable=false)
     private String lastName;
 
     @Column(name = "email")
     private String email;
+
+    @Column(name="phone")
+    private String phone;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "customer")
     private Set<Pet> pets;
@@ -48,7 +52,6 @@ public class Customer {
     private int zip;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy ="customer")
-    @Column(name="work_order")
     private Set<WorkOrder> orders;
 
     

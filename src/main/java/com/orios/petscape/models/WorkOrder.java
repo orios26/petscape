@@ -35,7 +35,7 @@ public class WorkOrder {
     @JoinColumn(name="employee_id", nullable = false)
     private Employee cashier;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "work_order")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "work_order_id")
     private Set<WorkItem> workItems;
 
     @Column(name="total")

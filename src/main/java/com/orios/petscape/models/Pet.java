@@ -50,5 +50,8 @@ public class Pet {
     @Column(name="weight")
     private int weight;
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
+    private Set<WorkItem> workItems;
+
     
 }
