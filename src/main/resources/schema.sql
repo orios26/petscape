@@ -1,22 +1,20 @@
 create table breeds 
 (
-    breed_id INTEGER not null, 
+    breed_id SERIAL PRIMARY KEY, 
     name varchar(255), 
     origin varchar(255), 
-    section varchar(255), 
-    primary key (breed_id)
+    section varchar(255)
 );
 
 create table colors 
 (
-    color_id INTEGER not null,
-    name varchar(255), 
-    primary key (color_id)
+    color_id SERIAL PRIMARY KEY,
+    name varchar(255)
 );
 
 create table customers 
 (
-    customer_id INTEGER not null, 
+    customer_id SERIAL PRIMARY KEY, 
     street_address varchar(50), 
     city varchar(50), 
     email varchar(50), 
@@ -24,32 +22,29 @@ create table customers
     first_name varchar(50) not null, 
     last_name varchar(50) not null, 
     state varchar(5), 
-    zip INTEGER, 
-    primary key (customer_id)
+    zip INTEGER
 );
 
 create table employees
 (
-    employee_id INTEGER not null, 
+    employee_id SERIAL PRIMARY KEY, 
     first_name varchar(255) not null,
     last_name varchar(50) not null,
     email varchar(50),
     phone varchar(10),
     employee_type_id INTEGER not null,
-    manager_id INTEGER not null,
-    primary key (employee_id)
+    manager_id INTEGER not null
 );
 
 create table employee_types
 (
-    employee_type_id INTEGER not null,
-    name varchar(50) not null,
-    primary key (employee_type_id)
+    employee_type_id SERIAL PRIMARY KEY,
+    name varchar(50) not null
 );
 
 create table pets 
 (
-    pet_id INTEGER not null, 
+    pet_id SERIAL PRIMARY KEY, 
     age INTEGER, 
     fixed boolean, 
     name varchar(255), 
@@ -58,56 +53,50 @@ create table pets
     customer_id INTEGER not null, 
     pet_breed_id INTEGER not null,
     pet_color_id INTEGER not null,
-    work_item_id INTEGER not null,
-    primary key (pet_id)
+    work_item_id INTEGER not null
 );
 
 create table pet_breeds
 (
-    pet_breed_id INTEGER not null, 
+    pet_breed_id SERIAL PRIMARY KEY, 
     pet_id INTEGER not null,
-    breed_id INTEGER not null,
-    primary key (pet_breed_id)
+    breed_id INTEGER not null
 );
 
 create table pet_colors 
 (
-    pet_color_id INTEGER not null,
+    pet_color_id SERIAL PRIMARY KEY,
     color_id INTEGER not null,
-    pet_id INTEGER not null, 
-    primary key (pet_color_id)
+    pet_id INTEGER not null
 );
 
 create table products 
 (
-    product_id INTEGER not null, 
+    product_id SERIAL PRIMARY KEY, 
     name varchar(50) not null, 
     description varchar(255),
-    price money,
-    primary key (product_id)
+    price money
 );
 
 create table work_orders
 (
-    work_order_id INTEGER not null, 
+    work_order_id SERIAL PRIMARY KEY, 
     customer_id INTEGER not null, 
     employee_id INTEGER not null, 
     total_price money not null, 
-    transaction_date DATE not null DEFAULT CURRENT_DATE,
-    primary key (work_order_id)
+    transaction_date DATE not null DEFAULT CURRENT_DATE
 );
 
 create table work_items
 (
-    work_item_id INTEGER not null, 
+    work_item_id SERIAL PRIMARY KEY, 
     work_order_id INTEGER not null,
     employee_id INTEGER not null,
     pet_id INTEGER not null, 
     product_id INTEGER not null, 
     quantity INTEGER not null DEFAULT 1, 
     description varchar(255),
-    work_item_date DATE not null DEFAULT CURRENT_DATE,
-    primary key (work_item_id)
+    work_item_date DATE not null DEFAULT CURRENT_DATE
 );
 
 
