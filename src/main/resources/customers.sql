@@ -1,0 +1,15 @@
+insert into customers (first_name, last_name, email, phone, street_address, city, state, zip) values ('Genevieve', 'Powland', 'gpowland0@behance.net', '2515973510', '73 Bartelt Crossing', 'Mobile', 'AL', '36689');
+insert into customers (first_name, last_name, email, phone, street_address, city, state, zip) values ('Vanny', 'Oxtiby', 'voxtiby1@phoca.cz', '2022713314', '472 Green Way', 'Washington', 'DC', '20220');
+insert into customers (first_name, last_name, email, phone, street_address, city, state, zip) values ('Joya', 'Prise', 'jprise2@bbb.org', '7137687936', '19226 Roth Point', 'Houston', 'TX', '77245');
+insert into customers (first_name, last_name, email, phone, street_address, city, state, zip) values ('Dulcie', 'Berka', 'dberka3@mit.edu', '3041136328', '9176 Prentice Center', 'Charleston', 'WV', '25356');
+insert into customers (first_name, last_name, email, phone, street_address, city, state, zip) values ('Maisey', 'Laxtonne', 'mlaxtonne4@1688.com', '6147640955', '08 Raven Drive', 'Columbus', 'OH', '43268');
+insert into customers (first_name, last_name, email, phone, street_address, city, state, zip) values ('Garnet', 'Walne', 'gwalne5@ebay.com', '8167717602', '2 Mayer Road', 'Kansas City', 'MO', '64190');
+insert into customers (first_name, last_name, email, phone, street_address, city, state, zip) values ('Denice', 'Graybeal', 'dgraybeal6@liveinternet.ru', '5021071874', '0 Shelley Hill', 'Louisville', 'KY', '40280');
+insert into customers (first_name, last_name, email, phone, street_address, city, state, zip) values ('Becki', 'Tomsu', 'btomsu7@bing.com', '9127129530', '1492 Sheridan Road', 'Macon', 'GA', '31217');
+insert into customers (first_name, last_name, email, phone, street_address, city, state, zip) values ('Stace', 'Pinkie', 'spinkie8@seattletimes.com', '8066590159', '49773 Gina Court', 'Lubbock', 'TX', '79491');
+insert into customers (first_name, last_name, email, phone, street_address, city, state, zip) values ('Yettie', 'Karchowski', 'ykarchowski9@google.com.br', '8643941362', '11632 Bluestem Plaza', 'Greenville', 'SC', '29615');
+insert into customers (first_name, last_name, email, phone, street_address, city, state, zip) values ('Vanny', 'Ackrill', 'vackrilla@theguardian.com', '5162162183', '0119 Elka Parkway', 'Great Neck', 'NY', '11024');
+insert into customers (first_name, last_name, email, phone, street_address, city, state, zip) values ('Klemens', 'Fever', 'kfeverb@list-manage.com', '3617912384', '8 Elka Parkway', 'Corpus Christi', 'TX', '78410');
+insert into customers (first_name, last_name, email, phone, street_address, city, state, zip) values ('Cayla', 'Hyman', 'chymanc@360.cn', '2532459193', '351 Glendale Lane', 'Tacoma', 'WA', '98417');
+insert into customers (first_name, last_name, email, phone, street_address, city, state, zip) values ('Wilt', 'Dracksford', 'wdracksfordd@va.gov', '8163356415', '9 Brentwood Road', 'Kansas City', 'MO', '64144');
+insert into customers (first_name, last_name, email, phone, street_address, city, state, zip) values ('Diane', 'Chicotti', 'dchicottie@illinois.edu', '8651195231', '532 Florence Plaza', 'Knoxville', 'TN', '37914');
