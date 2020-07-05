@@ -1,7 +1,7 @@
 create table breeds 
 (
     breed_id SERIAL PRIMARY KEY, 
-    name varchar(255), 
+    name varchar(255) not null, 
     origin varchar(255), 
     section varchar(255)
 );
@@ -9,18 +9,18 @@ create table breeds
 create table colors 
 (
     color_id SERIAL PRIMARY KEY,
-    name varchar(255)
+    name varchar(255) not null
 );
 
 create table customers 
 (
     customer_id SERIAL PRIMARY KEY, 
-    street_address varchar(50), 
-    city varchar(50), 
-    email varchar(50), 
-    phone varchar(10),
     first_name varchar(50) not null, 
     last_name varchar(50) not null, 
+    email varchar(50), 
+    phone varchar(15),
+    street_address varchar(50), 
+    city varchar(50), 
     state varchar(5), 
     zip INTEGER
 );
@@ -31,9 +31,13 @@ create table employees
     first_name varchar(255) not null,
     last_name varchar(50) not null,
     email varchar(50),
-    phone varchar(10),
+    phone varchar(15),
+    street_address varchar(50),
+    city varchar(50),
+    state varchar(5),
+    zip INTEGER,
     employee_type_id INTEGER not null,
-    manager_id INTEGER not null
+    manager_id INTEGER
 );
 
 create table employee_types
@@ -45,10 +49,10 @@ create table employee_types
 create table pets 
 (
     pet_id SERIAL PRIMARY KEY, 
-    age INTEGER, 
-    fixed boolean, 
-    name varchar(255), 
-    sex varchar(255), 
+    name varchar(255) not null, 
+    age INTEGER not null, 
+    fixed boolean not null, 
+    sex varchar(1) not null, 
     weight INTEGER, 
     customer_id INTEGER not null, 
     pet_breed_id INTEGER not null,
@@ -81,22 +85,22 @@ create table products
 create table work_orders
 (
     work_order_id SERIAL PRIMARY KEY, 
-    customer_id INTEGER not null, 
-    employee_id INTEGER not null, 
     total_price money not null, 
-    transaction_date DATE not null DEFAULT CURRENT_DATE
+    transaction_date DATE not null DEFAULT CURRENT_DATE,
+    customer_id INTEGER not null, 
+    employee_id INTEGER not null
 );
 
 create table work_items
 (
     work_item_id SERIAL PRIMARY KEY, 
+    quantity INTEGER not null DEFAULT 1, 
+    description varchar(255),
+    work_item_date DATE not null DEFAULT CURRENT_DATE,
     work_order_id INTEGER not null,
     employee_id INTEGER not null,
     pet_id INTEGER not null, 
-    product_id INTEGER not null, 
-    quantity INTEGER not null DEFAULT 1, 
-    description varchar(255),
-    work_item_date DATE not null DEFAULT CURRENT_DATE
+    product_id INTEGER not null
 );
 
 
