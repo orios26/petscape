@@ -58,6 +58,7 @@ create table pets
     customer_id INTEGER not null, 
     pet_breed_id INTEGER not null,
     pet_color_id INTEGER not null,
+    work_item_id INTEGER not null,
     primary key (pet_id)
 );
 
@@ -96,14 +97,37 @@ create table work_orders
     primary key (work_order_id)
 );
 
-alter table pet_breeds add constraint pet_breed_to_breeds foreign key (breed_id) references breeds;
+create table work_items
+(
+    work_item_id INTEGER not null, 
+    work_order_id INTEGER not null,
+    employee_id INTEGER not null,
+    pet_id INTEGER not null, 
+    product_id INTEGER not null, 
+    quantity INTEGER not null DEFAULT 1, 
+    description varchar(255),
+    work_item_date DATE not null DEFAULT CURRENT_DATE,
+    primary key (work_item_id)
+);
 
+
+alter table pet_breeds add constraint pet_breed_to_breeds foreign key (breed_id) references breeds;
 alter table pet_breeds add constraint pet_breed_to_pets foreign key (pet_id) references pets;
 
 alter table pet_colors add constraint pet_colors_to_colors foreign key (color_id) references colors;
-
 alter table pet_colors add constraint pet_colors_to_pets foreign key (pet_id) references pets;
 
 alter table pets add constraint pets_to_customers foreign key (customer_id) references customers;
+alter table pets add constraint pets_to_pet_breed foreign key (pet_breed_id) references pet_breeds;
+alter table pets add constraint pets_to_pet_color foreign key (pet_color_id) references pet_colors;
+alter table pets add constraint pets_to_work_items foreign key (work_item_id) references work_items;
 
-alter table pets add constraint pets_to_pet_breed foreign (pet_breed_id) references pet_breeds;
+alter table employees add constraint employee_to_employee_type foreign key (employee_type_id) references employee_types;
+
+alter table work_orders add constraint work_orders_to_customers foreign key (customer_id) references customers;
+alter table work_orders add constraint work_orders_to_employees foreign key (employee_id) references employees;
+
+alter table work_items add constraint work_items_to_work_order foreign key (work_order_id) references work_orders;
+alter table work_items add constraint work_items_to_employee foreign key (employee_id) references employees;
+alter table work_items add constraint work_items_to_pet foreign key (pet_id) references pets;
+alter table work_items add constraint work_items_to_product foreign key (product_id) references products;

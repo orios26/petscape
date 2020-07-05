@@ -38,6 +38,12 @@ public class WorkItem {
     @ManyToOne
     @JoinColumn(name="product_id")
     private Product product;
+
+    @Column(name="quantity")
+    private int quantity;
+
+    @Column(name="description")
+    private String description;
     
     @Column(name="work_item_date")
     private LocalDateTime workItemDate;
