@@ -55,7 +55,7 @@ public class Employee {
     @Column(name="state")
     private String state;
 
-    @Column(state="zip")
+    @Column(name="zip")
     private int zip;
 
     @OneToMany(mappedBy = "employee")
