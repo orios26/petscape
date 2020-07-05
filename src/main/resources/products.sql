@@ -1,0 +1,15 @@
+insert into products (name, description, price) values ('Wine - Ej Gallo Sierra Valley', 'ridiculus mus etiam vel augue vestibulum rutrum rutrum neque aenean auctor gravida sem praesent id massa id nisl', '$15.96');
+insert into products (name, description, price) values ('Fireball Whisky', 'duis bibendum felis sed interdum venenatis turpis enim blandit mi in porttitor', '$10.50');
+insert into products (name, description, price) values ('Onions - White', 'luctus ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum vestibulum', '$24.08');
+insert into products (name, description, price) values ('Apples - Sliced / Wedge', 'morbi non lectus aliquam sit amet diam in magna bibendum imperdiet nullam', '$14.97');
+insert into products (name, description, price) values ('Icecream - Dibs', 'sit amet erat nulla tempus vivamus in felis eu sapien cursus vestibulum proin eu mi nulla ac enim in tempor', '$5.35');
+insert into products (name, description, price) values ('Pork - Kidney', 'aenean sit amet justo morbi ut odio cras mi pede', '$19.44');
+insert into products (name, description, price) values ('Chutney Sauce - Mango', 'ut blandit non interdum in ante vestibulum ante ipsum primis', '$16.66');
+insert into products (name, description, price) values ('Chicken Breast Halal', 'eget congue eget semper rutrum nulla nunc purus phasellus in felis donec', '$23.21');
+insert into products (name, description, price) values ('Baking Powder', 'orci luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit', '$16.75');
+insert into products (name, description, price) values ('Lettuce - Lolla Rosa', 'dolor sit amet consectetuer adipiscing elit proin interdum mauris non ligula', '$17.99');
+insert into products (name, description, price) values ('Noodles - Steamed Chow Mein', 'amet erat nulla tempus vivamus in felis eu sapien cursus vestibulum proin eu mi nulla', '$6.47');
+insert into products (name, description, price) values ('Mushroom - Chanterelle, Dry', 'eget elit sodales scelerisque mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante', '$21.89');
+insert into products (name, description, price) values ('Bread - 10 Grain Parisian', 'tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus', '$9.94');
+insert into products (name, description, price) values ('Wine - Maipo Valle Cabernet', 'amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis mattis egestas metus aenean fermentum donec', '$22.88');
+insert into products (name, description, price) values ('Onions - Red Pearl', 'lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc', '$0.34');

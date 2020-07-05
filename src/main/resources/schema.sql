@@ -1,21 +1,126 @@
-create table breeds (breed_id INTEGER not null,name varchar(255), primary key (breed_id))
+create table breeds 
+(
+    breed_id SERIAL PRIMARY KEY, 
+    name varchar(255) not null, 
+    origin varchar(255), 
+    section varchar(255)
+);
 
-create table colors (color_id INTEGER not null,name varchar(255), primary key (color_id))
+create table colors 
+(
+    color_id SERIAL PRIMARY KEY,
+    name varchar(255) not null
+);
 
-create table customers (customer_id INTEGER not null, street_address varchar(255), city varchar(255), email varchar(255), first_name varchar(255), last_name varchar(255), state varchar(255), zip int4, primary key (customer_id))
+create table customers 
+(
+    customer_id SERIAL PRIMARY KEY, 
+    first_name varchar(50) not null, 
+    last_name varchar(50) not null, 
+    email varchar(50), 
+    phone varchar(15),
+    street_address varchar(50), 
+    city varchar(50), 
+    state varchar(5), 
+    zip INTEGER
+);
 
-create table breeds (breed_id INTEGER not null, name varchar(255), origin varchar(255), section varchar(255), primary key (breed_id))
+create table employees
+(
+    employee_id SERIAL PRIMARY KEY, 
+    first_name varchar(255) not null,
+    last_name varchar(50) not null,
+    email varchar(50),
+    phone varchar(15),
+    street_address varchar(50),
+    city varchar(50),
+    state varchar(5),
+    zip INTEGER,
+    employee_type_id INTEGER not null,
+    manager_id INTEGER
+);
 
-create table pet_colors (pet_color_id INTEGER not null, color_id INTEGER not null, pet_id INTEGER not null, primary key (pet_color_id))
+create table employee_types
+(
+    employee_type_id SERIAL PRIMARY KEY,
+    name varchar(50) not null
+);
 
-create table pets (pet_id INTEGER not null, age int4, fixed boolean, name varchar(255), sex varchar(255), weight int4, customer_id INTEGER not null, primary key (pet_id))
+create table pets 
+(
+    pet_id SERIAL PRIMARY KEY, 
+    name varchar(255) not null, 
+    age INTEGER not null, 
+    fixed boolean not null, 
+    sex varchar(1) not null, 
+    weight INTEGER, 
+    customer_id INTEGER not null, 
+    pet_breed_id INTEGER not null,
+    pet_color_id INTEGER not null,
+    work_item_id INTEGER not null
+);
 
-alter table pet_breeds add constraint FKbkjx1jsybkownm9qyhh6h4dem foreign key (breed_id) references breeds
+create table pet_breeds
+(
+    pet_breed_id SERIAL PRIMARY KEY, 
+    pet_id INTEGER not null,
+    breed_id INTEGER not null
+);
 
-alter table pet_breeds add constraint FKiybewfv9pk7usixrsr03lhepl foreign key (pet_id) references pets
+create table pet_colors 
+(
+    pet_color_id SERIAL PRIMARY KEY,
+    color_id INTEGER not null,
+    pet_id INTEGER not null
+);
 
-alter table pet_colors add constraint FKffe07qs40e35b9n1b2ig9c8r5 foreign key (color_id) references colors
+create table products 
+(
+    product_id SERIAL PRIMARY KEY, 
+    name varchar(50) not null, 
+    description varchar(255),
+    price money
+);
 
-alter table pet_colors add constraint FKole4asu33n8i6x3xb1a5fyb14 foreign key (pet_id) references pets
+create table work_orders
+(
+    work_order_id SERIAL PRIMARY KEY, 
+    total_price money not null, 
+    transaction_date DATE not null DEFAULT CURRENT_DATE,
+    customer_id INTEGER not null, 
+    employee_id INTEGER not null
+);
 
-alter table pets add constraint FKhili9xtogoo1wl2rx11t95u2e foreign key (customer_id) references customers
+create table work_items
+(
+    work_item_id SERIAL PRIMARY KEY, 
+    quantity INTEGER not null DEFAULT 1, 
+    description varchar(255),
+    work_item_date DATE not null DEFAULT CURRENT_DATE,
+    work_order_id INTEGER not null,
+    employee_id INTEGER not null,
+    pet_id INTEGER not null, 
+    product_id INTEGER not null
+);
+
+
+alter table pet_breeds add constraint pet_breed_to_breeds foreign key (breed_id) references breeds;
+alter table pet_breeds add constraint pet_breed_to_pets foreign key (pet_id) references pets;
+
+alter table pet_colors add constraint pet_colors_to_colors foreign key (color_id) references colors;
+alter table pet_colors add constraint pet_colors_to_pets foreign key (pet_id) references pets;
+
+alter table pets add constraint pets_to_customers foreign key (customer_id) references customers;
+alter table pets add constraint pets_to_pet_breed foreign key (pet_breed_id) references pet_breeds;
+alter table pets add constraint pets_to_pet_color foreign key (pet_color_id) references pet_colors;
+alter table pets add constraint pets_to_work_items foreign key (work_item_id) references work_items;
+
+alter table employees add constraint employee_to_employee_type foreign key (employee_type_id) references employee_types;
+
+alter table work_orders add constraint work_orders_to_customers foreign key (customer_id) references customers;
+alter table work_orders add constraint work_orders_to_employees foreign key (employee_id) references employees;
+
+alter table work_items add constraint work_items_to_work_order foreign key (work_order_id) references work_orders;
+alter table work_items add constraint work_items_to_employee foreign key (employee_id) references employees;
+alter table work_items add constraint work_items_to_pet foreign key (pet_id) references pets;
+alter table work_items add constraint work_items_to_product foreign key (product_id) references products;

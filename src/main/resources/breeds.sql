@@ -188,7 +188,7 @@ VALUES
 ('BOLOGNESE', 'Bichons and related breeds', 'ITALY'),
 ('NEAPOLITAN MASTIFF', 'Molossian type', 'ITALY'),
 ('ITALIAN ROUGH-HAIRED SEGUGIO', 'Scent hounds', 'ITALY'),
-("CIRNECO DELL'ETNA", 'Primitive type - Hunting Dogs', 'ITALY'),
+('CIRNECO DELL''ETNA', 'Primitive type - Hunting Dogs', 'ITALY'),
 ('ITALIAN SIGHTHOUND', 'Short-haired Sighthounds', 'ITALY'),
 ('MAREMMA AND THE ABRUZZES SHEEPDOG', 'Sheepdogs', 'ITALY'),
 ('ITALIAN POINTING DOG', 'Continental Pointing Dogs', 'ITALY'),

@@ -17,4 +17,4 @@ INSERT INTO "colors" (name) VALUES
 ('Piebald'),
 ('Flowered'),
 ('Landseet'),
-('Spotted')
+('Spotted');
