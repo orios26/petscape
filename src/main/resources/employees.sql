@@ -1,0 +1,15 @@
+insert into employees (first_name, last_name, email, phone, employee_type_id, manager_id) values ('Alexis', 'Overington', 'aoverington0@upenn.edu', '3297022633', 2, 1);
+insert into employees (first_name, last_name, email, phone, employee_type_id, manager_id) values ('Henriette', 'Ortiga', 'hortiga1@nba.com', '4183586189', 1, 1);
+insert into employees (first_name, last_name, email, phone, employee_type_id, manager_id) values ('Idaline', 'Britt', 'ibritt2@npr.org', '3461733304', 1, 2);
+insert into employees (first_name, last_name, email, phone, employee_type_id, manager_id) values ('Clarissa', 'Bilsland', 'cbilsland3@blogger.com', '1457861822', 3, 2);
+insert into employees (first_name, last_name, email, phone, employee_type_id, manager_id) values ('Ricoriki', 'Iowarch', 'riowarch4@narod.ru', '8398094869', 1, 2);
+insert into employees (first_name, last_name, email, phone, employee_type_id, manager_id) values ('Karia', 'Foort', 'kfoort5@independent.co.uk', '1787479515', 3, 1);
+insert into employees (first_name, last_name, email, phone, employee_type_id, manager_id) values ('Eddie', 'Fishbourn', 'efishbourn6@blogs.com', '8775447256', 1, 2);
+insert into employees (first_name, last_name, email, phone, employee_type_id, manager_id) values ('Katrinka', 'Tippings', 'ktippings7@geocities.com', '7966881251', 3, 1);
+insert into employees (first_name, last_name, email, phone, employee_type_id, manager_id) values ('Clementius', 'Norsister', 'cnorsister8@free.fr', '2562575183', 2, 1);
+insert into employees (first_name, last_name, email, phone, employee_type_id, manager_id) values ('Aila', 'McManus', 'amcmanus9@wunderground.com', '8852950400', 1, 2);
+insert into employees (first_name, last_name, email, phone, employee_type_id, manager_id) values ('Charis', 'Enriques', 'cenriquesa@businessinsider.com', '1193800351', 1, 2);
+insert into employees (first_name, last_name, email, phone, employee_type_id, manager_id) values ('Caddric', 'Brendeke', 'cbrendekeb@tumblr.com', '2053564491', 3, 2);
+insert into employees (first_name, last_name, email, phone, employee_type_id, manager_id) values ('Pebrook', 'Marwood', 'pmarwoodc@amazon.co.uk', '2709941957', 1, 1);
+insert into employees (first_name, last_name, email, phone, employee_type_id, manager_id) values ('Stefan', 'Rivers', 'sriversd@123-reg.co.uk', '7862983193', 1, 1);
+insert into employees (first_name, last_name, email, phone, employee_type_id, manager_id) values ('Dixie', 'Seamans', 'dseamanse@aboutads.info', '2097992474', 2, 1);

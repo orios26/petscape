@@ -26,8 +26,8 @@ public class EmployeeType {
     @Column(name="name")
     private String name;
 
-    //@OneToMany(cascade = CascadeType.ALL, mappedBy = "employee_type")
-    //private Set<Employee> employees;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "employeeType")
+    private Set<Employee> employees;
 
     
 }
