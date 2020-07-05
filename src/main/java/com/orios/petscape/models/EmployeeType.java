@@ -23,7 +23,7 @@ public class EmployeeType {
     @Column(name="employee_type_id")
     private Long id;
 
-    @Column(name="name")
+    @Column(name="name", nullable = false)
     private String name;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "employeeType")

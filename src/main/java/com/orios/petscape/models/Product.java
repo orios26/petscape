@@ -23,7 +23,7 @@ public class Product {
     @Column(name="product_id")
     private Long id;
 
-    @Column(name="name")
+    @Column(name="name", nullable = false)
     private String name;
 
     @Column(name="description")

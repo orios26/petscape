@@ -19,7 +19,7 @@ public class Color {
     @Column(name="color_id")
     private Long id;
 
-    @Column(name="name")
+    @Column(name="name", nullable = false)
     private String name;
     
 }

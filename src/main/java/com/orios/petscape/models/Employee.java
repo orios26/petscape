@@ -30,10 +30,10 @@ public class Employee {
     @ManyToOne
     private Employee supervisor;
 
-    @Column(name="first_name")
+    @Column(name="first_name", nullable = false)
     private String firstName;
 
-    @Column(name="last_name")
+    @Column(name="last_name", nullable = false)
     private String lastName;
 
     @ManyToOne
@@ -45,6 +45,18 @@ public class Employee {
 
     @Column(name="phone")
     private String phone;
+
+    @Column(name="street_address")
+    private String steetAddress;
+
+    @Column(name="city")
+    private String city;
+
+    @Column(name="state")
+    private String state;
+
+    @Column(state="zip")
+    private int zip;
 
     @OneToMany(mappedBy = "employee")
     private Set<WorkItem> workItems;

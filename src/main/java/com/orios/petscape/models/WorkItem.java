@@ -23,6 +23,15 @@ public class WorkItem {
     @Column(name="work_item_id")
     private Long id;
 
+    @Column(name="quantity", nullable = false)
+    private int quantity;
+
+    @Column(name="description")
+    private String description;
+    
+    @Column(name="work_item_date", nullable = false)
+    private LocalDateTime workItemDate;
+
     @ManyToOne
     @JoinColumn(name="work_order_id")
     private WorkOrder workOrder;
@@ -38,14 +47,4 @@ public class WorkItem {
     @ManyToOne
     @JoinColumn(name="product_id")
     private Product product;
-
-    @Column(name="quantity")
-    private int quantity;
-
-    @Column(name="description")
-    private String description;
-    
-    @Column(name="work_item_date")
-    private LocalDateTime workItemDate;
-
 }

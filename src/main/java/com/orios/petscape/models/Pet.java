@@ -25,33 +25,38 @@ public class Pet {
     @Column(name="pet_id")
     private Long id;
 
+    @Column(name="name", nullable = false)
+    private String name;
+
+    @Column(name="age", nullable = false)
+    private int age;
+
+    @Column(name="fixed", nullable = false)
+    private Boolean isFixed;
+
+    @Column(name="sex", nullable = false)
+    private String sex;
+
+    @Column(name="weight")
+    private int weight;
+
     @ManyToOne
     @JoinColumn(name="customer_id", nullable = false)
     private Customer customer;
-
-    @Column(name="name")
-    private String name;
-
-    @Column(name="sex")
-    private String sex;
-
-    @Column(name="fixed")
-    private Boolean isFixed;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
     private Set<PetBreed> petBreeds;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
     private Set<PetColor> petColors;
-    
-    @Column(name="age")
-    private int age;
-
-    @Column(name="weight")
-    private int weight;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
     private Set<WorkItem> workItems;
+    
+    
+
+
+
 
     
 }
