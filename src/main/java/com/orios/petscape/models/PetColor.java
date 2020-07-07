@@ -17,7 +17,7 @@ import lombok.Data;
 public class PetColor {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="pet_color_id")
     private Long id;
 
