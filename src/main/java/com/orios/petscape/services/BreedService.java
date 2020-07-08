@@ -21,9 +21,18 @@ public class BreedService {
 	public Breed getById(Long id) {
         Breed breed = breedRepository.findById(id).orElse(null);
         return breed;
-	}
-
+    }
+    
 	public void addBreed(Breed breed) {
         breedRepository.save(breed);
+    }
+
+	public void updateBreed(Breed breed) {
+        breedRepository.save(breed);
 	}
+
+	public void deleteBreed(Long id) {
+        breedRepository.deleteById(id);
+	}
+    
 }
