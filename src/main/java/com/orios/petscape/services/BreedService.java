@@ -13,26 +13,21 @@ public class BreedService {
 
     @Autowired
     private BreedRepository breedRepository;
-    
-    public List<Breed> getAllBreeds(){
+
+    public List<Breed> getAll(){
         return breedRepository.findAll();
     }
 
-	public Breed getById(Long id) {
-        Breed breed = breedRepository.findById(id).orElse(null);
-        return breed;
+    public Breed findById(Long id){
+        return breedRepository.findById(id).orElse(null);
     }
-    
-	public void addBreed(Breed breed) {
+
+    public void addOrUpdate(Breed breed){
         breedRepository.save(breed);
     }
 
-	public void updateBreed(Breed breed) {
-        breedRepository.save(breed);
-	}
-
-	public void deleteBreed(Long id) {
+    public void deleteById(Long id){
         breedRepository.deleteById(id);
-	}
+    }
     
 }

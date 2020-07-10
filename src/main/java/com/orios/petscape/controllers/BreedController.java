@@ -26,28 +26,28 @@ public class BreedController {
 
     @GetMapping("/breeds")
     public List<Breed> getAllBreeds(){
-        List<Breed> allBreeds = breedService.getAllBreeds();
+        List<Breed> allBreeds = breedService.getAll();
         return allBreeds;
     }
 
     @GetMapping("/breeds/{id}")
     public Breed getBreedById(@PathVariable Long id) {
-        return breedService.getById(id);
+        return breedService.findById(id);
     }
 
     @PutMapping("/breeds/{id}")
     public void updateBreed(@RequestBody Breed breed){
-        breedService.updateBreed(breed);
+        breedService.addOrUpdate(breed);
     }
 
     @DeleteMapping("breeds/{id}")
     public void deleteBreed(@PathVariable Long id){
-        breedService.deleteBreed(id);
+        breedService.deleteById(id);
     }
 
     @PostMapping("/breeds")
     public void addBreed(@RequestBody Breed breed){
-        breedService.addBreed(breed);
+        breedService.addOrUpdate(breed);
     }
 
 
