@@ -20,7 +20,7 @@ import lombok.Data;
 public class Employee {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="employee_id")
     private Long id;
 
@@ -55,7 +55,7 @@ public class Employee {
     @Column(name="state")
     private String state;
 
-    @Column(state="zip")
+    @Column(name="zip")
     private int zip;
 
     @OneToMany(mappedBy = "employee")

@@ -19,7 +19,7 @@ import lombok.Data;
 public class WorkItem {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="work_item_id")
     private Long id;
 

@@ -15,7 +15,7 @@ import lombok.Data;
 public class Breed {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="breed_id")
     private Long id;
 

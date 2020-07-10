@@ -23,7 +23,7 @@ import lombok.Data;
 public class WorkOrder {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="work_order_id")
     private Long id;
 
