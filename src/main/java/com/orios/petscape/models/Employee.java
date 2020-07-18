@@ -12,6 +12,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import lombok.Data;
 
 @Data
@@ -24,11 +27,11 @@ public class Employee {
     @Column(name="employee_id")
     private Long id;
 
-    @OneToMany(mappedBy = "supervisor")
-    private Set<Employee> directReports;
-
-    @ManyToOne
-    private Employee supervisor;
+//    @OneToMany(mappedBy = "employee")
+//    private Set<Employee> directReports;
+//
+//    @ManyToOne
+//    private Employee supervisor;
 
     @Column(name="first_name", nullable = false)
     private String firstName;

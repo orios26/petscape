@@ -11,6 +11,9 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import lombok.Data;
 
 @Data
@@ -27,7 +30,7 @@ public class EmployeeType {
     private String name;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "employeeType")
+    @JsonIgnore
     private Set<Employee> employees;
 
-    
 }
