@@ -54,10 +54,7 @@ create table pets
     fixed boolean not null, 
     sex varchar(1) not null, 
     weight INTEGER, 
-    customer_id INTEGER not null, 
-    pet_breed_id INTEGER not null,
-    pet_color_id INTEGER not null,
-    work_item_id INTEGER not null
+    customer_id INTEGER not null
 );
 
 create table pet_breeds
